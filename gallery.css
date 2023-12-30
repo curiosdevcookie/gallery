@@ -1,4 +1,4 @@
-:root{
+:root {
   padding: 0;
   margin: 0;
   font-size: 62.5%;
@@ -11,7 +11,7 @@ main {
   grid-auto-flow: dense;
   grid-gap: 1rem;
   padding: 2rem;
-  background-image: url('../../images/textures/Wall_texture_9.jpg');
+  background-image: url("./images/textures/Wall_texture_9.jpg");
   background-size: cover;
 }
 
@@ -23,24 +23,21 @@ div {
   overflow: hidden;
 }
 
-
 a:nth-of-type(odd) {
-  grid-column:  span 2;
+  grid-column: span 2;
   grid-row: span 2;
-  }
+}
 
 img {
   width: 100%;
   height: 100%;
 }
 
-
-  main > div:hover {
-    cursor: pointer;
-    width:max-content;
-    z-index: 1;
-  }
-
+main > div:hover {
+  cursor: pointer;
+  width: max-content;
+  z-index: 1;
+}
 
 figure:has(pre) {
   background: rgb(252, 232, 255);
