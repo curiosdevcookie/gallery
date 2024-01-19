@@ -16,6 +16,8 @@ main:has(figure) {
   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
   grid-auto-flow: dense;
   grid-gap: 3em;
+  align-items: stretch;
+  justify-content: stretch;
 }
 
 /* figures */
