@@ -16,11 +16,6 @@ main:has(figure) {
   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
   grid-auto-flow: dense;
   grid-gap: 3em;
-
-  background-image: url("./images/textures/Wall_texture_9.jpg");
-  background-size: cover;
-  align-items: stretch;
-  justify-items: stretch;
 }
 
 /* figures */
@@ -29,8 +24,6 @@ figure {
   position: relative;
   border: 0.5rem solid goldenrod;
   aspect-ratio: 1/1;
-  width: 100%;
-  height: 100%;
   object-fit: scale-down;
   object-position: 50% 50%;
   overflow: hidden;
