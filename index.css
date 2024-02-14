@@ -108,12 +108,40 @@ body {
   background-size: cover;
   display: flex;
   flex-direction: column;
-  padding: 5vw;
+
   gap: 2rem;
+  animation: background-scroll linear;
+  animation-timeline: scroll();
+  overflow-y: auto;
 }
 
-footer {
-  display: none;
+/* animations */
+
+@keyframes grow-progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes background-scroll {
+  0% {
+    background: #ffecec;
+  }
+  25% {
+    background: #ffef96;
+  }
+  50% {
+    background: #b9ff96;
+  }
+  75% {
+    background: #96ffef;
+  }
+  100% {
+    background: #ecffec;
+  }
 }
 
 @media print {
@@ -126,15 +154,36 @@ footer {
   }
 
   body {
-    max-width: 100vw;
-    max-height: 90vh;
     width: auto;
     height: auto;
     background-image: none;
   }
+}
 
-  footer {
-    display: block;
-    font-size: 1.5rem;
-  }
+/* progress bar */
+
+.progress {
+  height: 2rem;
+  background-image: url("./images/textures/Wall_texture_9.jpg");
+  background-size: cover;
+  transform-origin: 0 50%;
+  animation: grow-progress linear;
+  animation-timeline: scroll();
+  z-index: 5;
+}
+
+header,
+footer {
+  position: sticky;
+  height: 2rem;
+  z-index: 2;
+  box-shadow: black 0 0 3rem;
+}
+
+header {
+  top: 0;
+}
+
+footer {
+  bottom: 0;
 }
