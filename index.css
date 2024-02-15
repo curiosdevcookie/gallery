@@ -11,13 +11,23 @@ body {
   margin: 0;
 }
 
-main:has(figure) {
+.body-gallery {
+  background-image: url("./images/textures/Wall_texture_9.jpg");
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  animation: background-scroll linear;
+  animation-timeline: scroll();
+  width: 100vw;
+}
+
+.gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
   grid-auto-flow: dense;
-  grid-gap: 3em;
-  align-items: stretch;
-  justify-content: stretch;
+  gap: 3rem;
+  /* align-items: stretch;
+  justify-content: stretch; */
 }
 
 /* figures */
@@ -72,56 +82,9 @@ em {
   white-space: nowrap;
 }
 
-/* preview window */
-
-.user-options {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.user-options div {
-  display: flex;
-  gap: 1rem;
-}
-
-.button-preview {
-  font-family: Impact, sans-serif;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  font-size: calc(1.6rem * 1.5);
-  padding: calc(0.5rem * 1.7);
-  border: white solid 0.2rem;
-  border-radius: 0.5rem;
-  text-align: center;
-  cursor: pointer;
-  line-height: 1.2;
-}
-
 a {
   text-decoration: none;
   color: inherit;
-}
-
-body {
-  background-image: url("./images/textures/Wall_texture_9.jpg");
-  background-size: cover;
-  display: flex;
-  flex-direction: column;
-
-  gap: 2rem;
-  animation: background-scroll linear;
-  animation-timeline: scroll();
-  overflow-y: auto;
-}
-
-body:has(.preview-image) {
-  background-image: url("./images/textures/Wall_texture_9.jpg");
-  background-size: cover;
-  display: flex;
-  flex-direction: column;
-  padding: 5vw;
-  gap: 2rem;
 }
 
 /* animations */
@@ -153,22 +116,6 @@ body:has(.preview-image) {
   }
 }
 
-@media print {
-  .button-preview {
-    display: none;
-  }
-
-  .preview-image {
-    visibility: visible;
-  }
-
-  body {
-    width: auto;
-    height: auto;
-    background-image: none;
-  }
-}
-
 /* progress bar */
 
 .progress {
@@ -181,18 +128,83 @@ body:has(.preview-image) {
   z-index: 5;
 }
 
-header,
-footer {
+#header,
+#footer {
   position: sticky;
   height: 2rem;
   z-index: 2;
   box-shadow: black 0 0 3rem;
 }
 
-header {
+#header {
   top: 0;
 }
 
-footer {
+#footer {
   bottom: 0;
+}
+
+/* preview pages */
+
+.body-preview-image {
+  background-image: url("./images/textures/Wall_texture_9.jpg");
+  display: flex;
+  flex-direction: column;
+  padding: 3rem;
+  gap: 2rem;
+}
+
+footer > p {
+  display: none;
+}
+
+/* preview window */
+
+.user-options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.user-options div {
+  display: flex;
+  gap: 1rem;
+}
+
+.button-preview {
+  font-family: Impact, sans-serif;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: calc(1.6rem * 1.5);
+  padding: calc(0.5rem * 1.7);
+  border: white solid 0.2rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  cursor: pointer;
+  line-height: 1.2;
+}
+
+@media print {
+  .button-preview {
+    display: none;
+  }
+
+  .preview-image {
+    visibility: visible;
+    max-width: 100%;
+    max-height: 90%;
+  }
+
+  .body-preview-image {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    height: 90vh;
+  }
+
+  footer > p {
+    display: block;
+    font-size: 1.5rem;
+    page-break-before: auto;
+  }
 }
