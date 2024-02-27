@@ -83,12 +83,21 @@ footer > p {
 }
 
 @media print {
+  body,
+  html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+
   .button-preview {
     display: none;
   }
 
   .preview-image {
     visibility: visible;
+    max-height: 90vh;
+    width: auto;
   }
 
   .body-preview-image {
@@ -96,7 +105,7 @@ footer > p {
     flex-direction: column;
     place-items: center;
     background-image: none;
-    padding: 0 10rem;
+    padding: 0 1rem;
   }
 
   footer > p {
