@@ -5,6 +5,11 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: "The Battle Continuez";
+  src: url("./fonts/the-battle-continuez/TheBattleCont.ttf") format("truetype");
+}
+
 html,
 .body-gallery,
 .gallery,
@@ -13,13 +18,16 @@ html,
   padding: 0;
 }
 
+html,
+body {
+  max-width: 100vw;
+  max-height: 100vh;
+  overflow-x: hidden;
+}
+
 .body-gallery {
   background-image: url("./images/textures/Wall_texture_9.jpg");
   background-size: cover;
-  animation: background-scroll linear;
-  animation-timeline: scroll();
-  overflow-y: scroll;
-  padding: 0;
 }
 
 .gallery {
@@ -32,11 +40,25 @@ html,
   padding: calc(1rem + 3vw);
 }
 
+/* headings */
+
+h1 {
+  font-family: "The Battle Continuez";
+  font-size: calc(5rem + 2vw);
+  text-align: center;
+  margin-top: calc(3rem + 3vw);
+  color: goldenrod;
+  text-shadow: 0.3rem 0.3rem 0.3rem black;
+  transform: scaleX(2);
+}
+
 /* figures */
 
 figure {
   position: relative;
   border: 0.5rem solid goldenrod;
+  box-shadow: 0 0 1rem black;
+  outline: 0.1rem solid black;
   aspect-ratio: 1/1;
   object-fit: scale-down;
   object-position: 50% 50%;
@@ -108,15 +130,16 @@ a {
   position: sticky;
   height: 2rem;
   z-index: 2;
-  box-shadow: black 0 0 3rem;
 }
 
 #header {
   top: 0;
+  box-shadow: 1rem 1rem 1rem black;
 }
 
 #footer {
   bottom: 0;
+  box-shadow: -1rem -1rem 1rem black;
 }
 
 /* animations */
@@ -127,24 +150,6 @@ a {
   }
   to {
     transform: scaleX(1);
-  }
-}
-
-@keyframes background-scroll {
-  0% {
-    background: #ffecec;
-  }
-  25% {
-    background: #ffef96;
-  }
-  50% {
-    background: #b9ff96;
-  }
-  75% {
-    background: #96ffef;
-  }
-  100% {
-    background: #ecffec;
   }
 }
 
