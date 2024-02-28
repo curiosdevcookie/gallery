@@ -44,9 +44,9 @@ body {
 
 h1 {
   font-family: "The Battle Continuez";
-  font-size: calc(5rem + 2vw);
+  font-size: clamp(3rem, 5vw, 10rem);
   text-align: center;
-  margin-top: calc(3rem + 3vw);
+  margin-top: clamp(8rem, 5vw, 15rem);
   color: goldenrod;
   text-shadow: 0.3rem 0.3rem 0.3rem black;
   transform: scaleX(2);
